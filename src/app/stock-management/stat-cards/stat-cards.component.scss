@@ -1,0 +1,44 @@
+.overview {
+  margin: 50px 0px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 20px; /* Spacing between the columns */
+}
+
+.stat-card {
+  display: flex;
+  width: 90%;
+  height: 70px;
+  align-items: center; /* Align items horizontally */
+  padding: 15px 20px;
+  background-color: #f9f9f9; /* Light background for the card */
+  border-radius: 12px; /* Softer corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card mat-icon {
+  background-color: #fdeeee; /* Background color for the icon container */
+  color: #D32F2F; /* Icon color (red) */
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners for the icon background */
+  font-size: 30px; /* Size of the icon */
+  margin-right: 15px; /* Space between icon and text */
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column; /* Stack the number and text vertically */
+}
+
+.stat-content span {
+  font-size: 24px; /* Increase size for emphasis */
+  font-weight: bold;
+  color: #333; /* Darker text color */
+  margin-bottom: 5px;
+}
+
+.stat-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #777; /* Subtle color for the description text */
+}

@@ -1,0 +1,65 @@
+<div class="stock-management">
+  <h2>Stock Management</h2>
+
+  <mat-tab-group (selectedTabChange)="onTabChange($event)"  animationDuration="0ms">
+    
+    <!-- Category Tab -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>category</mat-icon>
+        Category
+      </ng-template>
+      
+      <div class="overview">
+        <app-stat-cards 
+          [activeCategories]="activeCategories"
+          [totalCategories]="totalCategories"
+          [activeMenuItems]="activeMenuItems"
+          [totalMenuItems]="totalMenuItems"
+          [activeModifiers]="activeModifiers"
+          [totalModifiers]="totalModifiers">
+        </app-stat-cards>
+      </div>
+
+      <div class="category-list">
+        <app-category-table 
+          [categoryData]="categoryData" 
+          [dynamicColumns]="dynamicColumnsCategory"
+          [showToggle]="true"
+          [showEdit]="false"
+          [tableTitle]="tableTitle">
+        </app-category-table>
+      </div>
+    </mat-tab>
+
+    <!-- Menu Items Tab -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon>menu_book</mat-icon>
+        Menu Item
+      </ng-template>
+      
+      <div class="overview">
+        <app-stat-cards 
+          [activeCategories]="activeCategories"
+          [totalCategories]="totalCategories"
+          [activeMenuItems]="activeMenuItems"
+          [totalMenuItems]="totalMenuItems"
+          [activeModifiers]="activeModifiers"
+          [totalModifiers]="totalModifiers">
+        </app-stat-cards>
+      </div>
+
+      <div class="menu-items-list">
+        <app-category-table 
+          [categoryData]="menuItemsData" 
+          [dynamicColumns]="dynamicColumnsMenuItems"
+          [showToggle]="true"
+          [showEdit]="true"
+          [tableTitle]="tableTitle">
+        </app-category-table>
+      </div>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>

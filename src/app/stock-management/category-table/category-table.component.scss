@@ -1,0 +1,83 @@
+$header-color: #3498db;
+$table-header-background-color: #424242;
+
+.category-table-container {
+      border: 1px solid #ebe7e7;
+      border-radius: 20px;
+      padding: 20px 20px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+  }
+}
+.category-header {
+  color: $header-color;
+}
+
+.mat-header-cell {
+  background-color: $table-header-background-color;
+  color: white;
+}
+
+table {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; 
+  
+  // Remove box shadow from the table
+  box-shadow: none;
+  
+  // Border for the bottom of the entire table
+  border-bottom: 2px solid #EFEFEF;
+}
+
+th {
+  font-weight: bold;
+}
+
+/* Columns are right-aligned */
+td.mat-cell, th.mat-header-cell {
+  text-align: left;
+}
+
+/* Align the second-to-last and last cells to the right only when both toggle and edit columns are present */
+.has-action-columns td.mat-cell:last-child, 
+.has-action-columns th.mat-header-cell:last-child,
+.has-action-columns td.mat-cell:nth-last-child(2), 
+.has-action-columns th.mat-header-cell:nth-last-child(2) {
+  text-align: right; /* Align the second-to-last and last cells to the right */
+}
+
+/* Edit button alignment */
+button.mat-icon-button {
+  margin-left: auto;
+  display: block;
+}
+
+/* For the slide toggle to get aligned properly */
+.mat-slide-toggle {
+  margin-left: auto;
+}
+
+// Add border to each row (body and header)
+.mat-row, .mat-header-row {
+  border-bottom: 2px solid #EFEFEF;
+}
+
+/* Checked state - the bar and the thumb when the toggle is ON */
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: #e3051b; /* The color of the bar when checked */
+}
+
+::ng-deep .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: #e3051b; /* The color of the thumb when checked */
+}
+
+/* Unchecked state - the bar and the thumb when the toggle is OFF */
+::ng-deep .mat-slide-toggle .mat-slide-toggle-bar {
+  background-color: #BDBDBD; /* The color of the bar when unchecked */
+}
