@@ -8,20 +8,34 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { StatCardsComponent } from './stat-cards/stat-cards.component';
 import { CategoryTableComponent } from './category-table/category-table.component';
+import { MenuUpdateDialogComponent } from './menu-update-dialog/menu-update-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
  StatCardsComponent,
     CategoryTableComponent,
-    CategoryListComponent
+    CategoryListComponent,
+    MenuUpdateDialogComponent
   ],
   imports: [
     CommonModule,
+       MatDialogModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatInputModule,
+    MatSelectModule,
     MatTableModule,
     MatIconModule,
     MatSlideToggleModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    FormsModule
   ],
   exports: [
     CategoryListComponent, 

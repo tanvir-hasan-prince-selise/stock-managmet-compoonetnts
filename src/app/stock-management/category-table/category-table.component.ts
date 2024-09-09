@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CategoryElement } from '../category-list/category-list.component';
+import { MatDialog } from '@angular/material/dialog';  // Import MatDialog
+import { MenuUpdateDialogComponent } from '../menu-update-dialog/menu-update-dialog.component';
 
 @Component({
   selector: 'app-category-table',
@@ -14,10 +16,12 @@ export class CategoryTableComponent {
   @Input() showEdit: boolean = true;
 
   // Add this for dynamic table title
-  @Input() tableTitle: string = '';  // <-- Add this line
-  
+  @Input() tableTitle: string = '';  
+
   displayedColumns!: string[];
   actionColumnsPresent: boolean = false;
+
+  constructor(private dialog: MatDialog) {}  // Inject MatDialog
 
   ngOnChanges() {
     // Create the displayedColumns array based on the inputs
@@ -44,6 +48,13 @@ export class CategoryTableComponent {
   }
 
   onEdit(element: CategoryElement) {
-    // Logic for edit action
+    const dialogRef = this.dialog.open(MenuUpdateDialogComponent, {
+      width: '400px',
+      data: element,
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('Dialog was closed');
+    });
   }
 }

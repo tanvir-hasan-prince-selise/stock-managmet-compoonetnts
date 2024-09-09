@@ -1,0 +1,44 @@
+<h2 mat-dialog-title class="dialog-header">
+  <span>Menu Update</span>
+  <span class="close-button" (click)="closeDialog()">×</span>
+</h2>
+
+<mat-dialog-content class="menu-update-content">
+  <div class="menu-item-header">
+    <mat-icon>menu_book</mat-icon>
+    <div>
+      <p class="menu-item-name">{{ menuItem.menuName }}</p>
+      <p class="menu-item-stock">{{ menuItem.quantity }} / {{ menuItem.maxQuantity }} ({{ menuItem.frequency }})</p>
+    </div>
+    <span *ngIf="menuItem.lowStock" class="low-stock">Low stock</span>
+  </div>
+  
+  <div class="quantity-control">
+    <button mat-icon-button (click)="decreaseQuantity()">-</button>
+  <span>{{changeQuantity}}</span>
+    <button mat-icon-button (click)="increaseQuantity()">+</button>
+  </div>
+
+  <div class="current-stock">
+    <label>Current Stock</label>
+    <span>{{ menuItem.currentStock || 28 }}</span> <!-- Placeholder value (28) if not provided from backend -->
+  </div>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Lowest Limit (Alert)*</mat-label>
+    <input matInput [(ngModel)]="lowestLimit" type="number">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Limit Type*</mat-label>
+    <mat-select [(ngModel)]="limitType">
+      <mat-option value="Daily">Daily</mat-option>
+      <mat-option value="Weekly">Weekly</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-raised-button color="primary" class="update-button" (click)="updateStock()">Update Stock</button>
+</mat-dialog-actions>

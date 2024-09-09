@@ -11,6 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTabsModule } from '@angular/material/tabs';
 import { CategoryListComponent } from './stock-management/category-list/category-list.component';
 import { StockManagementModule } from './stock-management/stock-management.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { StockManagementModule } from './stock-management/stock-management.modul
     MatCardModule,
     MatTabsModule,
     StockManagementModule,
-
+FormsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
